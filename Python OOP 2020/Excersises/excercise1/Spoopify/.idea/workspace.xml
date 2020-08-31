@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3cd6896a-74ff-4ce7-9188-196f773c359c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1eSBZpT0pl1sqsz0XmsJ3ssS9kr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests for band.SongTest">
+    <configuration name="Unittests for band.SongTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Spoopify" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;band.SongTest&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for band.SongTest.test_init" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Spoopify" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;band.SongTest.test_init&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for band.SongTest.test_remove_song_working" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Spoopify" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;band.SongTest.test_remove_song_working&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests for band.SongTest" />
+        <item itemvalue="Python tests.Unittests for band.SongTest.test_remove_song_working" />
+        <item itemvalue="Python tests.Unittests for band.SongTest.test_init" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3cd6896a-74ff-4ce7-9188-196f773c359c" name="Default Changelist" comment="" />
+      <created>1594305171395</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594305171395</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1594305258406">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1594305258406" />
+    <state width="1515" height="213" key="GridCell.Tab.0.bottom" timestamp="1597356760414">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1515" height="213" key="GridCell.Tab.0.bottom/0.0.1536.832@0.0.1536.832" timestamp="1597356760414" />
+    <state width="1515" height="213" key="GridCell.Tab.0.center" timestamp="1597356760414">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1515" height="213" key="GridCell.Tab.0.center/0.0.1536.832@0.0.1536.832" timestamp="1597356760414" />
+    <state width="1515" height="213" key="GridCell.Tab.0.left" timestamp="1597356760414">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1515" height="213" key="GridCell.Tab.0.left/0.0.1536.832@0.0.1536.832" timestamp="1597356760414" />
+    <state width="1515" height="213" key="GridCell.Tab.0.right" timestamp="1597356760414">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1515" height="213" key="GridCell.Tab.0.right/0.0.1536.832@0.0.1536.832" timestamp="1597356760414" />
+  </component>
+</project>
