@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="927a66d2-b0e2-46bc-a5ac-156e9a77892d" name="Default Changelist" comment="" />
+    <list default="true" id="927a66d2-b0e2-46bc-a5ac-156e9a77892d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Retake_22.08.2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Retake_22.08.2020.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +21,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Exam" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -33,13 +36,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1598886844382">
+    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1598887788492">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.832@0.0.1536.832" timestamp="1598886844382" />
-    <state x="555" y="61" key="SettingsEditor" timestamp="1598886749006">
+    <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.832@0.0.1536.832" timestamp="1598887788492" />
+    <state x="555" y="61" key="SettingsEditor" timestamp="1598887686192">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="555" y="61" key="SettingsEditor/0.0.1536.832@0.0.1536.832" timestamp="1598886749006" />
+    <state x="555" y="61" key="SettingsEditor/0.0.1536.832@0.0.1536.832" timestamp="1598887686192" />
   </component>
 </project>
