@@ -1,3 +1,6 @@
+from project.appliances.appliance import Appliance
+
+
 class Room:
     def __init__(self, name: str, budget: float, members_count: int):
         self.family_name = name
@@ -33,8 +36,6 @@ class Room:
 
     @property
     def expenses(self):
-        if self.expenses < 0:
-            raise ValueError("Expenses cannot be negative")
         return self._expenses
 
     @expenses.setter
@@ -46,8 +47,13 @@ class Room:
     def calculate_expenses(self, *args):
         # TODO - needs to be checked (monthly or daily), and check args
         total_cost = 0
+        cost = []
         for el in args:
-            cost = [x.cost for x in el]
+            for i in el:
+                if isinstance(i, Appliance):
+                    cost.append(i.get_monthly_expense())
+                else:
+                    cost.append(i.cost)
             if cost:
                 total_cost += sum(cost)
         self.expenses = total_cost

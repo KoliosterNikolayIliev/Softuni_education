@@ -5,6 +5,7 @@ class Child:
         self.toys = toys_cost
         for i in self.toys:
             self.cost +=i
+        self.cost*=30
 
 
         #TODO - not sure for toys_cost
