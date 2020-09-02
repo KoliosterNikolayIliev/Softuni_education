@@ -35,7 +35,7 @@ class Everland:
             if room.children:
                 for child in room.children:
                     n += 1
-                    result += f"--- Child {n} monthly cost: {child.cost:.2f}$\n"
+                    result += f"--- Child {n} monthly cost: {child.get_monthly_expense():.2f}$\n"
             cost_appliances = 0
             if room.appliances:
                 for App in room.appliances:
