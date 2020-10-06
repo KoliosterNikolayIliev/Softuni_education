@@ -1,0 +1,16 @@
+{% extends 'shared/base.html' %}
+{% block site_title %}
+    index page from class based view
+{% endblock %}
+{% block site_main_content %}
+    <h1>It works from ClassView!</h1>
+    {{ users }}
+    {{ object_list }}
+    <ul>
+        {% for user in object_list %}
+            <li>
+                {{ user.username }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
