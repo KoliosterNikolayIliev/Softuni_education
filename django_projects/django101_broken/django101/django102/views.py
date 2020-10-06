@@ -17,6 +17,9 @@ def index(request):
     context = {
         'title': title, 'users': users
     }
+
+    print(users.query)
+
     return render(request, 'index.html', context)
 
 
