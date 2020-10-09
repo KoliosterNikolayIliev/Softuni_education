@@ -9,9 +9,9 @@
 
 # letters = [str(x) for x in range(1, 21)]
 # print(letters)
-
-# myrange = range(1, 21)
-# print(list(map(str, myrange)))
+#
+# my_range = range(1, 21)
+# print(list(map(str, my_range)))
 
 # a = ["1", 1, "1", 2]
 # print(list(set(a)))
@@ -641,3 +641,129 @@
 #     return [*args]
 #
 # print(test1(1, [1,2,3,4,5,6,7,8,9]))
+# Unsuccessful
+import csv
+import sqlite3
+
+# con = sqlite3.connect("database.db")
+# cur = con.cursor()
+# with open("ten_more_countries.txt", "r") as file:
+#     rows = csv.reader(file)
+#     print(list(rows))
+#     for row in rows:
+#         cur.execute("INSERT INTO countries VALUES (NULL,?,?,NULL)", (row["Country"],row["Area"]))
+# con.commit()
+# con.close()
+
+
+# import sqlite3
+# import pandas
+#
+# data = pandas.read_csv("ten_more_countries.txt")
+#
+# conn = sqlite3.connect("database.db")
+# cur = conn.cursor()
+# for index, row in data.iterrows():
+#     print(row["Country"], row["Area"])
+#     cur.execute("INSERT INTO countries VALUES (NULL,?,?,NULL)", (row["Country"], row["Area"]))
+# conn.commit()
+# conn.close()
+
+# from glob import glob
+#
+# print(len(glob("exrcise_92/*.py", recursive=False)))
+
+# from glob import glob
+#
+# print(len(glob("exercise_93/**/*.py",recursive=True)))
+
+# urls = []
+# with open("urls.txt", "r") as file:
+#     for url in file.readlines():
+#         # url = url.strip('\n')
+#         url = url.replace("s", "", 1)
+#         url = url.replace("/", "//", 1)
+#         urls.append(url)
+#     print(urls)
+#
+# with open("corrected_urls.txt", "w") as file:
+#     for url in urls:
+#         file.write(url)
+
+# planets = input("Please enter value:").split(",")
+#
+# with open("Planets.txt", "a+") as file:
+#     for planet in planets:
+#         file.write(planet+"\n")
+#
+
+# from tkinter import *
+# window=Tk()
+#
+# btn=Button(window, text="Add Line", fg='blue')
+# btn.place(x=300, y=37)
+# btn2=Button(window, text="Save changes", fg='blue')
+# btn2.place(x=380, y=37)
+# btn3=Button(window, text="Save and close", fg='blue')
+# btn3.place(x=480, y=37)
+# txtfld=Entry(window, text="This is Entry Widget", bd=5)
+# txtfld.place(x=100, y=37)
+#
+# window.title('Hello Python')
+# window.geometry("600x100+10+20")
+# window.mainloop()
+#
+#
+# file = open("Data.txt", "a+")
+# while True:
+#     data = input("Please enter value:")
+#     if data == "CLOSE":
+#         break
+#     elif data == "SAVE":
+#         file.close()
+#         file = open("Data.txt", "a+")
+#         continue
+#     else:
+#         file.write(data + "\n")
+
+#Thinker progrm
+
+# from tkinter import *
+#
+# window = Tk()
+#
+# file = open("user_gui.txt", "a+")
+#
+#
+# def add():
+#     file.write(user_value.get() + "\n")
+#     entry.delete(0, END)
+#
+#
+# def save():
+#     global file
+#     file.close()
+#     file = open("user_gui.txt", "a+")
+#
+#
+# def close():
+#     file.close()
+#     window.destroy()
+#
+#
+# user_value = StringVar()
+# entry = Entry(window, textvariable=user_value)
+# entry.grid(row=0, column=0)
+#
+# button_add = Button(window, text="Add line", command=add)
+# button_add.grid(row=0, column=1)
+#
+# button_save = Button(window, text="Save changes", command=save)
+# button_save.grid(row=0, column=2)
+#
+# button_close = Button(window, text="Save and Close", command=close)
+# button_close.grid(row=0, column=3)
+#
+# window.mainloop()
+
+
