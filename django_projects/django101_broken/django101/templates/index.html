@@ -29,7 +29,9 @@
             {% for game in games %}
                 <li>
                     {{ game.name }}
+                    {{ game.level_of_fifficlty }}
                     {{ game.get_level_of_difficulty_display }}
+                    {{ game.players_count }}
                 </li>
             {% endfor %}
         </ul>
