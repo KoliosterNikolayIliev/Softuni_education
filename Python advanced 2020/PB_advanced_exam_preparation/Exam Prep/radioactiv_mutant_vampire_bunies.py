@@ -73,7 +73,7 @@ for d in line:
 
 [print(''.join(row)) for row in matrix]
 if win:
-    print(won)
+    print("won")
 elif dead1 != "":
     print(dead1)
 else:
