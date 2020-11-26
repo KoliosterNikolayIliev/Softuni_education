@@ -17,23 +17,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="{% url 'list pets' %}">All pet photos</a>
-            <a class="nav-link" href="{% url 'create pet' %}">Add pet photo</a>
+            <li>
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'list pets' %}">All pet photos</a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'create pet' %}">Add pet photo</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sign Up</a>
+                <a class="nav-link" href="{% url 'signup_user' %}">Sign Up</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="container">
-    {% block h %}
-    {% endblock %}
+    {% block site_content %}
+    {% endblock site_content %}
 </div>
-</body>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
