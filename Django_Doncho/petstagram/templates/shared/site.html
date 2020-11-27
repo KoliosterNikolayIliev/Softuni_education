@@ -26,12 +26,18 @@
             <li>
                 <a class="nav-link" href="{% url 'create pet' %}">Add pet photo</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'signup_user' %}">Sign Up</a>
-            </li>
+            {% if user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_profile' user.pk %}">{{ user.username}} !</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup_user' %}">Sign Up</a>
+                </li>
+            {% endif %}
         </ul>
     </div>
 </nav>
