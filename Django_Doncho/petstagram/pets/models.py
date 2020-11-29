@@ -1,4 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
+
+from accounts.models import UserProfile
 
 
 class Pet(models.Model):
@@ -19,6 +22,9 @@ class Pet(models.Model):
     age = models.IntegerField(blank=False)
     description = models.TextField(blank=False)
     image = models.ImageField(upload_to='pets')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
 
     def __str__(self):
         return f'{self.id}; {self.name}; {self.age}'
@@ -27,8 +33,10 @@ class Pet(models.Model):
 class Like(models.Model):
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
     test = models.CharField(max_length=2)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Comment(models.Model):
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
     text = models.TextField(blank=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
