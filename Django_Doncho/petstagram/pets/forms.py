@@ -15,3 +15,7 @@ class PetForm(forms.ModelForm):
         model = Pet
         fields = '__all__'
         widgets = {'image_url': forms.TextInput(attrs={'id': 'img_input', })}
+
+
+class CommentForm(forms.Form):
+    text = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control rounded-2', }))

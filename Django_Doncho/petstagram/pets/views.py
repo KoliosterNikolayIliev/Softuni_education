@@ -3,19 +3,29 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from accounts.decorators import user_required
-from common.core.clean_up import clean_up_files
-from pets.forms.comment_form import CommentForm
-from pets.forms.pet_form import PetForm
+from pets.forms import CommentForm, PetForm
+from pets.tools.clean_up import clean_up_files
+
 from pets.models import Pet, Like, Comment
 
+def index(request):
+    return render(request, 'index.html')
 
 def list_pets(request):
+    pets = Pet.objects.filter(type='pic')
     context = {
-        'pets': Pet.objects.all(),
+        'pets': pets,
     }
 
     return render(request, 'pet_list.html', context)
+
+def list_mods(request):
+    mods = Pet.objects.filter(type='mod')
+    context = {
+        'mods': mods,
+    }
+
+    return render(request, 'mod_list.html', context)
 
 
 def details_or_comment_pet(request, pk):

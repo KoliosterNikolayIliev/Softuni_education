@@ -5,26 +5,21 @@ from accounts.models import UserProfile
 
 
 class Pet(models.Model):
-    DOG = 'dog'
-    CAT = 'cat'
-    PARROT = 'parrot'
-    UNKNOWN = 'unknown'
+    PIC = 'pic'
+    MOD = 'mod'
 
     PET_TYPES = (
-        (DOG, 'Dog'),
-        (CAT, 'Cat'),
-        (PARROT, 'Parrot'),
-        (UNKNOWN, 'Unknown'),
+        (PIC, 'pic'),
+        (MOD, 'mod'),
+
     )
 
-    type = models.CharField(max_length=7, choices=PET_TYPES, default=UNKNOWN)
+    type = models.CharField(max_length=7, choices=PET_TYPES, default=None)
     name = models.CharField(max_length=6, blank=False)
     age = models.IntegerField(blank=False)
     description = models.TextField(blank=False)
     image = models.ImageField(upload_to='pets')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-
 
     def __str__(self):
         return f'{self.id}; {self.name}; {self.age}'

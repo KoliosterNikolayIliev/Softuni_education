@@ -1,10 +1,12 @@
 
 from django.urls import path
 
-from pets.views import list_pets, details_or_comment_pet, like_pet, edit_pet, delete_pet, create_pet
+from pets.views import list_pets, details_or_comment_pet, like_pet, edit_pet, delete_pet, create_pet, index, list_mods
 
 urlpatterns = [
-    path('', list_pets, name='list pets'),
+    path('', index, name='index'),
+    path('pics/', list_pets, name='list pets'),
+    path('mods/', list_mods, name='list mods'),
     path('detail/<int:pk>/', details_or_comment_pet, name='pet details or comment'),
     path('like/<int:pk>/', like_pet, name='like pet'),
     path('edit/<int:pk>/', edit_pet, name='edit pet'),

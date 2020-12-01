@@ -10,10 +10,10 @@ from pets.models import Pet
 
 def user_profile(request, pk=None):
     user = request.user if pk is None else User.objects.get(pk=pk)
-    pets = user.pet_set.all()
+    pictures = user.pet_set.all()
     form = UserProfileForm()
     if request.method == 'GET':
-        context = {'profile_user': user, 'pets': pets, 'form': form, }
+        context = {'profile_user': user, 'pets': pictures, 'form': form, }
         return render(request, 'accounts/user_profile.html', context)
     else:
         form = UserProfileForm(request.POST, request.FILES, instance=user.userprofile)
