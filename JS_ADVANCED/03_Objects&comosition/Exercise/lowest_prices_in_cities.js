@@ -11,26 +11,21 @@ function priceCheck(input) {
     }
     for (const product in products) {
         for (const obj of products[product]) {
-            if(lowestPricesTowns[product]){
-                if (Number(lowestPricesTowns[product][1])>Number(obj.price)){
-                    lowestPricesTowns[product] = [obj.town,Number(obj.price)]
+            if (lowestPricesTowns[product]) {
+                if (Number(lowestPricesTowns[product][1]) > Number(obj.price)) {
+                    lowestPricesTowns[product] = [obj.town, Number(obj.price)];
                 }
-            }else{
-                lowestPricesTowns[product] = [obj.town,Number(obj.price)]
+            } else {
+                lowestPricesTowns[product] = [obj.town, Number(obj.price)];
             }
-
-
         }
-
     }
-    let result = ''
+    let result = '';
     for (const product in lowestPricesTowns) {
-        result+=`${product} -> ${lowestPricesTowns[product][1]} (${lowestPricesTowns[product][0]})\n`
+        result += `${product} -> ${lowestPricesTowns[product][1]} (${lowestPricesTowns[product][0]})\n`;
     }
-    return result
+    return result;
 }
-
-
 
 
 console.log(priceCheck(['Sample Town | Sample Product | 1000',
