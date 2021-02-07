@@ -137,24 +137,35 @@
 // outsideB()
 
 
-function createRect(width, height){
-    return {getHeight, getWidth, setWidth}
+// function createRect(width, height){
+//     return {getHeight, getWidth, setWidth}
+//
+//     function setWidth(value){
+//         width = value
+//     }
+//
+//     function getWidth(){
+//         return width;
+//     }
+//
+//     function getHeight(){
+//         return height;
+//     }
+// }
+//
+// const myRect = createRect(5,3)
+// console.log(myRect);
+// console.log(myRect.getHeight());
+// myRect.setWidth(7)
+// console.log(myRect.getWidth());
 
-    function setWidth(value){
-        width = value
-    }
 
-    function getWidth(){
-        return width;
-    }
+//Error handling
 
-    function getHeight(){
-        return height;
-    }
-}
+// let arr = new Array(-1);
+// console.log(arr);
+// let sub = 'hello'.substr(2,10000)
+// console.log(sub);
+// let date = new Date(10000000000)
+// console.log(date.getDate());
 
-const myRect = createRect(5,3)
-console.log(myRect);
-console.log(myRect.getHeight());
-myRect.setWidth(7)
-console.log(myRect.getWidth());
