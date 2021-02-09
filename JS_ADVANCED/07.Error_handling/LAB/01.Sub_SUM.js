@@ -21,8 +21,11 @@ function sum(arr){
     for (let num of arr){
         sum+=Number(num);
     }
+    function pesho(){return 'hi'}
+
+    console.log(pesho());
     return sum
 
 }
 
-module.exports = { sum };
+module.exports =  sum ;

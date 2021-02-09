@@ -169,3 +169,4 @@
 // let date = new Date(10000000000)
 // console.log(date.getDate());
 
+console.info('hi')
