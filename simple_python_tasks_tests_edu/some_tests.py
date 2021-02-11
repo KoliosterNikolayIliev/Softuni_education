@@ -51,7 +51,6 @@
 
 """binary tree inversion"""
 
-
 # (creating the tree)
 import copy
 
@@ -81,10 +80,6 @@ sample_tree.left.right = TreeNode(5)
 sample_tree.right.left = TreeNode(6)
 sample_tree.right.right = TreeNode(7)
 
-initial_tree = copy.deepcopy(sample_tree)
-
-inverted_tree = invert_tree(sample_tree)
-
 
 def print_tree(root):
     print(root.val)
@@ -93,7 +88,7 @@ def print_tree(root):
     if root.right:
         print_tree(root.right)
 
-print(sample_tree is initial_tree)
+
 print_tree(sample_tree)
-print('kur')
+inverted_tree = invert_tree(sample_tree)
 print_tree(inverted_tree)
