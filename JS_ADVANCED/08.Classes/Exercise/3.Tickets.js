@@ -1,9 +1,7 @@
 function solve(tickets, filtering) {
-    tickets = tickets.forEach(item => splitting(item.split('|')))
-    function splitting(item){
-        return item
-    }
-    return tickets
+    tickets.forEach((el, index, tickets) => {tickets[index] = el.split('|');});
+
+    return tickets;
 }
 
 console.log(solve(['Philadelphia|94.20|available',
