@@ -1,3 +1,15 @@
+// class Rectangle {
+//     constructor(width, height, color) {
+//         this.width = width;
+//         this.height = height;
+//         this.color = color;
+//     }
+//
+//     calcArea() {
+//         return this.width * this.height;
+//     }
+// }
+
 class Rectangle {
     constructor(width, height, color) {
         this.width = width;
@@ -5,8 +17,44 @@ class Rectangle {
         this.color = color;
     }
 
+    get width() {
+        return this._width;
+    }
+
+    set width(value) {
+        if(typeof value !== 'number') {
+            return new TypeError('The value must be a number.');
+        }
+
+        this._width = value;
+    }
+
+    get height() {
+        return this._height;
+    }
+
+    set height(value) {
+        if(typeof value !== 'number') {
+            return new TypeError('The value must be a number.');
+        }
+
+        this._height = value;
+    }
+
+    get color() {
+        return this._color[0].toUpperCase() + this._color.slice(1);
+    }
+
+    set color(value) {
+        if(typeof value !== 'string') {
+            return new TypeError('The value must be a string.');
+        }
+
+        this._color = value;
+    }
+
     calcArea() {
-        return this.width * this.height;
+        return this._width * this._height;
     }
 }
 
@@ -15,3 +63,4 @@ console.log(rect.width);
 console.log(rect.height);
 console.log(rect.color);
 console.log(rect.calcArea());
+console.log(rect);
