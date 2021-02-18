@@ -5,7 +5,7 @@ function solve() {
     let dueDate = document.getElementById('date')
     let addButton = document.getElementById('add');
     let openTasks = document.getElementsByTagName('section')[1].children[1]
-    let inProgress = document.getElementsByTagName('section')[2].children[1]
+    let inProgress = document.getElementById("in-progress")
     let completed = document.getElementsByTagName('section')[3].children[1]
     document.getElementsByTagName('body')[0].addEventListener('click', clickHandler);
 
@@ -28,7 +28,7 @@ function solve() {
             let article = event.target.parentElement.parentElement
             finish(article)
         }
-        
+
     }
     function deleteArt(article){
         let div = article.parentElement;
@@ -40,8 +40,8 @@ function solve() {
         inProgress.removeChild(article)
         completed.appendChild(article)
         let div = article.children[3]
-        div.removeChild(div.firstChild)
-        div.removeChild(div.firstChild)
+        article.removeChild(div)
+
 
     }
 
