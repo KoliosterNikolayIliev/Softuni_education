@@ -38,9 +38,39 @@ let{assert}=require('chai')
 describe("Tests …", function() {
     describe("TODO …", function() {
         it("TODO …", function() {
-            // TODO: …
+            assert.equal(numberOperations.powNumber(2),4)
+        });
+        it("TODO …", function() {
+            assert.equal(numberOperations.powNumber(0),0)
+        });
+        it("TODO …", function() {
+            assert.equal(numberOperations.numberChecker(99),'The number is lower than 100!')
+        });
+        it("TODO …", function() {
+            assert.equal(numberOperations.numberChecker(101),'The number is greater or equal to 100!')
+        });
+        it("TODO …", function() {
+            assert.equal(numberOperations.numberChecker(100),'The number is greater or equal to 100!')
+        });
+        it("TODO …", function() {
+            assert.throw(()=>numberOperations.numberChecker('hhh'),'The input is not a number!')
+        });
+
+        it("TODO …", function() {
+            assert.deepEqual(numberOperations.sumArrays([1,1],[1,1,1]),[ 2, 2, 1 ])
+        });
+
+        it("TODO …", function() {
+            assert.deepEqual(numberOperations.sumArrays([1,1,1],[1,1]),[ 2, 2, 1 ])
+        });
+
+        it("TODO …", function() {
+            assert.deepEqual()
+        });
+        it("TODO …", function() {
+            assert.deepEqual()
         });
     });
-    // TODO: …
+
 });
 
