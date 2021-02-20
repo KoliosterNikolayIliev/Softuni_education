@@ -55,7 +55,7 @@ let elements = {
 }
 elements["addButton"] = document.getElementById("add");
 
-elements.task.value = "JS Advanced Exam";
+elements.task.value = "JS Advanced FinalExam";
 elements.description.value = "Lern DOM, Unit Testing and Classes";
 elements.date.value = "2020.04.08";
 
@@ -69,7 +69,7 @@ elements.addButton.click();
 assert.equal(open.children.length, 2, "Incorrect count of added tasks in 'Open' section");
 assert.equal(open.children[1].children[0].tagName, "ARTICLE", "Incorrect tagname");
 assert.equal(open.children[1].children[0].children.length, 4, "Incorrect count of added HTML Elements in the article tag");
-assert.equal(open.children[1].children[0].children[0].textContent, "JS Advanced Exam", "Incorrect Task name");
+assert.equal(open.children[1].children[0].children[0].textContent, "JS Advanced FinalExam", "Incorrect Task name");
 assert.equal(open.children[1].children[0].children[1].textContent, "Description: Lern DOM, Unit Testing and Classes", "Incorrect description");
 assert.equal(open.children[1].children[0].children[2].textContent, "Due Date: 2020.04.08", "Incorrect date");
 assert.equal(open.children[1].children[0].children[3].children.length, 2, "Incorrect count of buttons");
