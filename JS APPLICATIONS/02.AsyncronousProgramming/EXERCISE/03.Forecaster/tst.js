@@ -1,1 +1,0 @@
-console.log(String.fromCharCode(0xE2, 0x98, 0x80));
