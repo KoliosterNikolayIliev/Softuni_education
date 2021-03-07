@@ -1,21 +1,30 @@
 function attachEvents() {
-    document.getElementsByClassName('load')[0].addEventListener('click', getCatches)
+    document.getElementsByClassName('load')[0].addEventListener('click', getCatches);
+
+    let token = sessionStorage.getItem('userToken');
+    if (token != null) {
+        document.getElementById('logout').addEventListener('click', logoutFn);
+        loggedIn();
+
+    }
+
 }
 
 attachEvents();
 
-async function getCatches(){
-    let url = 'http://localhost:3030/data/catches'
-    let response = await fetch(url)
-    let data = await response.json()
-    await loadCatches(data)
+async function getCatches() {
+    let url = 'http://localhost:3030/data/catches';
+    let response = await fetch(url);
+    let data = await response.json();
+    // console.log(data)
+    await loadCatches(data);
 }
 
-async function loadCatches(data){
-    console.log(data)
-    let catches = document.getElementById('catches')
-    catches.innerHTML = ''
-    let allCatches = []
+async function loadCatches(data) {
+
+    let catches = document.getElementById('catches');
+    catches.innerHTML = '';
+    let allCatches = [];
     for (const fish of data) {
         let catchDiv = `<div id ="${fish._id}" class="catch">
                     <input type="hidden" id = "ownerId" value="${fish._ownerId}">
@@ -39,9 +48,96 @@ async function loadCatches(data){
                     <hr>
                     <button disabled class="update">Update</button>
                     <button disabled class="delete">Delete</button>
-                </div>`
-        allCatches.push(catchDiv)
+                </div>`;
+        allCatches.push(catchDiv);
     }
-    catches.innerHTML = allCatches.join('\n')
+    catches.innerHTML = allCatches.join('\n');
+    let catchesUpdated = document.getElementById('catches').children;
+    let userId = sessionStorage.getItem('userId');
+    for (let catchX of catchesUpdated) {
+        if (catchX.children[0].value === userId) {
+            let updateBtn = catchX.getElementsByClassName('update')[0];
+            let deleteBtn = catchX.getElementsByClassName('delete')[0];
+            updateBtn.disabled = false;
+            deleteBtn.disabled = false;
+            updateBtn.addEventListener('click', updateCatch);
+            deleteBtn.addEventListener('click', deleteCatch);
+        }
+    }
 
+}
+
+function loggedIn() {
+    let add = document.getElementsByClassName('add')[0];
+    add.addEventListener('click', createNewEntry);
+    add.disabled = false;
+
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('logout').style.display = '';
+
+}
+
+async function logoutFn(event) {
+    let token = sessionStorage.getItem('userToken');
+
+    await fetch('http://localhost:3030/users/logout', {
+        method: 'get',
+        headers: {'X-Authorization': token}
+    });
+    let catches = document.getElementById('catches').children;
+
+    sessionStorage.clear();
+    for (const catchX of catches) {
+        catchX.getElementsByClassName('update')[0].disabled = true;
+        catchX.getElementsByClassName('delete')[0].disabled = true;
+    }
+    // window.location.pathname = 'index.html';
+    document.getElementById('login').style.display = '';
+    document.getElementById('logout').style.display = 'none';
+}
+
+async function createNewEntry(event) {
+    let url = 'http://localhost:3030/data/catches';
+    let angler = document.getElementById('addForm').children[2].value;
+    let weight = Number(document.getElementById('addForm').children[4].value);
+    let species = document.getElementById('addForm').children[6].value;
+    let location = document.getElementById('addForm').children[8].value;
+    let bait = document.getElementById('addForm').children[10].value;
+    let captureTime = Number(document.getElementById('addForm').children[12].value);
+
+    if (angler === '' || weight <= 0 || species === '' || location === '' || bait === '' || captureTime <= 0) {
+        return alert('•\tangler - string representing the name of the person who caught the fish\n' +
+            '•\tweight - floating-point number representing the weight of the fish in kilograms\n' +
+            '•\tspecies - string representing the name of the fish species\n' +
+            '•\tlocation - string representing the location where the fish was caught\n' +
+            '•\tbait - string representing the bait used to catch the fish\n' +
+            '•\tcaptureTime - integer number representing the time needed to catch the fish in minutes\n');
+    }
+    let token = sessionStorage.getItem('userToken');
+    await fetch(url, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({angler, weight, species, location, bait, captureTime})
+    });
+    await getCatches();
+}
+
+async function updateCatch(event) {
+
+}
+
+async function deleteCatch(event) {
+    let id = event.target.parentElement.id;
+    let token = sessionStorage.getItem('userToken');
+    await fetch('http://localhost:3030/data/catches/' + id, {
+        method: 'delete',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        }
+    });
+    event.target.parentElement.parentElement.removeChild(event.target.parentElement)
 }
