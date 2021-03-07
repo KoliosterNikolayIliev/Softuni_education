@@ -6,7 +6,7 @@ function attachEvents() {
         document.getElementById('logout').addEventListener('click', logoutFn);
         loggedIn();
 
-    }
+    }else{document.getElementsByClassName('add')[0].disabled=true}
 
 }
 
@@ -16,7 +16,7 @@ async function getCatches() {
     let url = 'http://localhost:3030/data/catches';
     let response = await fetch(url);
     let data = await response.json();
-    // console.log(data)
+    // console.log(data);
     await loadCatches(data);
 }
 
@@ -74,10 +74,11 @@ function loggedIn() {
 
     document.getElementById('login').style.display = 'none';
     document.getElementById('logout').style.display = '';
+    getCatches()
 
 }
 
-async function logoutFn(event) {
+async function logoutFn() {
     let token = sessionStorage.getItem('userToken');
 
     await fetch('http://localhost:3030/users/logout', {
@@ -91,9 +92,9 @@ async function logoutFn(event) {
         catchX.getElementsByClassName('update')[0].disabled = true;
         catchX.getElementsByClassName('delete')[0].disabled = true;
     }
-    // window.location.pathname = 'index.html';
     document.getElementById('login').style.display = '';
     document.getElementById('logout').style.display = 'none';
+    window.location.pathname = 'index.html';
 }
 
 async function createNewEntry(event) {
@@ -120,13 +121,44 @@ async function createNewEntry(event) {
             'Content-Type': 'application/json',
             'X-Authorization': token
         },
-        body: JSON.stringify({angler, weight, species, location, bait, captureTime})
+        body: JSON.stringify({angler, weight, species, location, bait, "captureTime ": captureTime})
     });
+    document.getElementById('addForm').children[2].value = '';
+    document.getElementById('addForm').children[4].value = '';
+    document.getElementById('addForm').children[6].value = '';
+    document.getElementById('addForm').children[8].value = '';
+    document.getElementById('addForm').children[10].value = '';
+    document.getElementById('addForm').children[12].value = '';
     await getCatches();
 }
 
 async function updateCatch(event) {
+    let angler = event.target.parentElement.getElementsByClassName('angler')[0].value;
+    let weight = Number(event.target.parentElement.getElementsByClassName('weight')[0].value);
+    let species = event.target.parentElement.getElementsByClassName('species')[0].value;
+    let location = event.target.parentElement.getElementsByClassName('location')[0].value;
+    let bait = event.target.parentElement.getElementsByClassName('bait')[0].value;
+    let captureTime = Number(event.target.parentElement.getElementsByClassName('captureTime')[0].value);
 
+    console.log(angler, weight, species, location, bait, captureTime,);
+    if (angler === '' || weight <= 0 || species === '' || location === '' || bait === '' || captureTime <= 0) {
+        return alert('•\tangler - string representing the name of the person who caught the fish\n' +
+            '•\tweight - floating-point number representing the weight of the fish in kilograms\n' +
+            '•\tspecies - string representing the name of the fish species\n' +
+            '•\tlocation - string representing the location where the fish was caught\n' +
+            '•\tbait - string representing the bait used to catch the fish\n' +
+            '•\tcaptureTime - integer number representing the time needed to catch the fish in minutes\n');
+    }
+    let id = event.target.parentElement.id;
+    let token = sessionStorage.getItem('userToken');
+    await fetch('http://localhost:3030/data/catches/' + id, {
+        method: 'put',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({angler, weight, species, location, bait, "captureTime ": captureTime})
+    });
 }
 
 async function deleteCatch(event) {
@@ -139,5 +171,5 @@ async function deleteCatch(event) {
             'X-Authorization': token
         }
     });
-    event.target.parentElement.parentElement.removeChild(event.target.parentElement)
+    event.target.parentElement.parentElement.removeChild(event.target.parentElement);
 }

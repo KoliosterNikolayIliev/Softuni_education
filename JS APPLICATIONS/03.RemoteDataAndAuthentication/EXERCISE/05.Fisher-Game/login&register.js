@@ -56,6 +56,7 @@ async function onRegisterSubmit(event) {
 
 async function onLoginSubmit(event) {
     event.preventDefault();
+    sessionStorage.clear();
     let formData = new FormData(event.target);
     let email = formData.get('email');
     let password = formData.get('password');
