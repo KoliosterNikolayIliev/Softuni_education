@@ -39,6 +39,16 @@ function setupSection(sectionId, setup) {
 }
 
 function setupNavigation() {
+    let email = sessionStorage.getItem('email')
+        if (email!=null){
+            document.getElementById('welcome-msg').textContent = `Welcome, ${email}`;
+            [...document.getElementsByClassName('user')].forEach(l => l.style.display = 'block');
+            [...document.getElementsByClassName('guest')].forEach(l => l.style.display = 'none');
+        } else {
+            [...document.getElementsByClassName('user')].forEach(l => l.style.display = 'none');
+            [...document.getElementsByClassName('guest')].forEach(l => l.style.display = 'block');
+        }
+
     document.querySelector('nav').addEventListener('click', (event) => {
         let view = links[event.target.id];
         if (typeof view === 'function') {
@@ -51,4 +61,24 @@ function setupNavigation() {
         event.preventDefault();
         showCreate();
     });
+    document.getElementById('logoutBtn').addEventListener('click', logout)
+}
+
+async function logout(){
+    let token = sessionStorage.getItem('authToken')
+    let response = await  fetch('http://localhost:3030/users/logout',{
+        method:'get',
+        headers:{'X-Authorization':token}
+    })
+    if (response.ok){
+        sessionStorage.removeItem('authToken');
+        sessionStorage.removeItem('email');
+        sessionStorage.removeItem('userId');
+        [...document.getElementsByClassName('user')].forEach(l => l.style.display = 'none');
+        [...document.getElementsByClassName('guest')].forEach(l => l.style.display = 'block');
+        showHome();
+    }else {
+        let error = await response.json();
+        alert(error.message);
+    }
 }
