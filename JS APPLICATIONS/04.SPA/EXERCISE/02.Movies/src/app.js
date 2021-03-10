@@ -8,7 +8,7 @@ import {setupDetails} from './details.js';
 import {setupLogin, showLogin} from './login.js';
 import {setupRegister, showRegister} from './register.js';
 import {setupCreate, showCreate} from './create.js';
-import {setupEdit} from './edit.js';
+import {setupEdit, showEdit} from './edit.js';
 
 let main = document.getElementsByTagName('main')[0];
 
@@ -17,6 +17,7 @@ let links = {
     'loginLink': showLogin,
     'registerLink': showRegister,
     'createLink': showCreate,
+    'editLink':showEdit,
 
 };
 

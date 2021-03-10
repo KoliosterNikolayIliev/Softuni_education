@@ -1,5 +1,7 @@
 import {showDetails} from './details.js';
 
+import {showLogin} from './login.js';
+
 let main;
 let section;
 
@@ -8,10 +10,15 @@ export function setupCreate(mainTarget, sectionTarget) {
     section = sectionTarget;
 
     let form = section.getElementsByTagName('form')[0];
+    form.childNodes.forEach(el=>el.value='')
     form.addEventListener('submit', onSubmit);
 }
 
 export async function showCreate() {
+
+    if(sessionStorage.getItem('authToken')==null){
+       return  await showLogin()
+    }
     main.innerHTML = '';
     main.appendChild(section);
 }
