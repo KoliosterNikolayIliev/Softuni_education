@@ -195,6 +195,7 @@ async function createComment(event, id) {
 }
 
 async function loadComments(id) {
+    document.getElementById('titleComments').innerHTML = ''
     let response = await fetch('http://localhost:3030/jsonstore/collections/myboard/comments');
     let data = await response.json();
     for (const comment of Object.values(data)) {
