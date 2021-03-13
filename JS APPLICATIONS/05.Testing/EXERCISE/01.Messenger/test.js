@@ -1,4 +1,4 @@
-const {firefox} = require('playwright');
+const {chromium} = require('playwright-chromium');
 const {assert} = require('chai');
 const mockData = require('./mock-data.json');
 
@@ -16,10 +16,10 @@ function jsonCustom(data) {
 let browser, page; // Declare reusable variables
 describe('E2E tests', function () {
 
-    this.timeout(60000);
+    this.timeout(6000);
     before(async () => {
 
-        browser = await firefox.launch({headless: true, slowMo: 1});
+        browser = await chromium.launch({headless: true, slowMo: 1});
     });
     after(async () => {
         await browser.close();
