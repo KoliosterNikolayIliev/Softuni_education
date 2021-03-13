@@ -30,4 +30,7 @@ async function sendMessage(message) {
         body: JSON.stringify(message)
     });
     const data = await response.json();
+    console.log(data)
 }
+
+
