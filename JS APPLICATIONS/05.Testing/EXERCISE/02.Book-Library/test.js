@@ -58,45 +58,33 @@ describe('E2E tests', function () {
         assert.equal(JSON.parse(request.postData()).author,author)
         assert.equal(JSON.parse(request.postData()).title,book)
     });
-    it.only('checks book validation', async () => {
+    it('checks book validation', async () => {
         await page.route('**/jsonstore/collections/books', (request) => request.fulfill(jsonCustom(mockData)));
         await page.goto('http://localhost:3000/');
         await page.click('text=Submit');
-        let otvrad;
-        await page.on('dialog', async dialog => {
-            otvrad = dialog.message();
-            await dialog.dismiss();
-            await browser.close();
-        });
-        page.evaluate(() => alert('1'));
-        console.log(otvrad);
-
-
-        // await page.on('dialog', async dialog => {
-        //     console.log(dialog.message());
-        //     await dialog.dismiss();
-        //     await browser.close();
-        // });
-        // page.evaluate(() => alert('1'));
-
+        page.on('dialog', dialog => dialog.accept());
 
     });
-    // it('post data', async () => {
-    //     let name = 'Pesho';
-    //     let message = 'Testing sucks!!!';
-    //     await page.route('**/jsonstore/messenger', (request) => request.fulfill(jsonCustom(mockData)));
-    //     await page.goto('http://localhost:3000/');
-    //     await page.fill('[id="author"]', name);
-    //     await page.fill('[id="content"]', message);
-    //     let [request] = await Promise.all([
-    //         page.waitForRequest(request => request.url().includes('/jsonstore/messenger') && request.method() == 'POST'),
-    //         page.click('text=Send')
-    //     ]);
-    //     assert.equal(JSON.parse(request.postData()).author,name)
-    //     assert.equal(JSON.parse(request.postData()).content,message)
-    //
-    //
-    //
-    // });
+    it.only('edit book', async () => {
+        await page.route('**/jsonstore/collections/books', (request) => request.fulfill(jsonCustom(mockData)));
+        await page.goto('http://localhost:3000/');
+        await page.click('text=LOAD ALL BOOKS')
+        // await page.click('text=Edit');
+
+        const [name] = await Promise.all([page.$eval('[name="title"]', el => el.value),await page.click('text=Edit')]);
+        // const author = await page.$('[name="author"]');
+        console.log(name);
+        // console.log(author);
+        assert.equal(name,'Harry Potter and the Philosopher\'s Stone')
+        // assert.equal(author,'J.K.Rowling')
+
+        // let [request] = await Promise.all([
+        //     page.waitForRequest(request => request.url().includes('/collections/books') && request.method() == 'PUT'),
+        //     await page.click('text=Submit')
+        // ]);
+        // assert.equal(JSON.parse(request.postData()).author, author)
+        // assert.equal(JSON.parse(request.postData()).title, book)
+    });
+
 });
 
