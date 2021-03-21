@@ -1,5 +1,7 @@
-import {html} from '../../node_modules/lit-html/lit-html.js'
+// import {html} from '../../node_modules/lit-html/lit-html.js'
+import {html} from 'https://unpkg.com/lit-html?module';
 import {getFurniture} from '../api/data.js';
+import {itemTemplate} from './common/item.js';
 
 let dashboardTemplate = (data) => html`
     <div class="row space-top">
@@ -13,21 +15,7 @@ let dashboardTemplate = (data) => html`
 <!-- {data.map(itemTemplate)} -->
     </div>`;
 
-let itemTemplate = (item) => html`
-    <div class="col-md-4">
-        <div class="card text-white bg-primary">
-            <div class="card-body">
-                <img src=${item.img}>
-                <p>${item.description}</p>
-                <footer>
-                    <p>Price: <span>${item.price} $</span></p>
-                </footer>
-                <div>
-                    <a href=${`/details/${item._id}`} class="btn btn-info">Details</a>
-                </div>
-            </div>
-        </div>
-    </div>`;
+
 
 export async function dashboardPage(context) {
     let data = await getFurniture()
