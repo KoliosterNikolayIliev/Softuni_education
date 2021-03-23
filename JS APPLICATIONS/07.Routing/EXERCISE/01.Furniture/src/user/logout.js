@@ -5,5 +5,4 @@ export async function logoutPage(context) {
     context.setUserNav()
     context.page.redirect('/')
     history.go(10);
-
 }
