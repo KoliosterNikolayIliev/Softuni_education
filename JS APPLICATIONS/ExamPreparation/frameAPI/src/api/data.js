@@ -1,14 +1,12 @@
 import * as api from './api.js';
 
-
-const host = 'http://localhost:3030';
-api.settings.host = host;
+import {host} from './api.js';
 
 export const login = api.login;
 export const register = api.register;
 export const logout = api.logout;
 
-async function getFurniture() {
+async function getItems() {
     return await api.get(host+'/data/catalog');
 }
 
@@ -16,7 +14,7 @@ async function getItemId(id) {
     return await api.get(host+'/data/catalog/' + id);
 }
 
-async function getOwnFurniture() {
+async function getUserItems() {
     let userId = sessionStorage.getItem('userId');
     return await api.get(host+`/data/catalog?where=_ownerId%3D%22${userId}%22`);
 }
@@ -29,15 +27,28 @@ async function editRecord(id, data) {
     return await api.put(host+'/data/catalog/' + id, data);
 }
 
-async function deleteRecord(id,) {
+async function deleteRecord(id) {
+    // TODO Check if id exists!!!
     return await api.del(host+'/data/catalog/' + id);
 }
 
 export {
-    getFurniture,
+    getItems,
     getItemId,
-    getOwnFurniture,
+    getUserItems,
     createRecord,
     editRecord,
     deleteRecord,
 }
+
+// //for testing purposes
+// window.login=login
+// window.register=register
+// window.logout=logout
+// window.getItems=getItems
+// window.getItemId=getItemId
+// window.getUserItems=getUserItems
+// window.createRecord=createRecord
+// window.editRecord=editRecord
+// window.deleteRecord=deleteRecord
+

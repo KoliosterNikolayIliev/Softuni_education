@@ -1,5 +1,5 @@
 import {html} from '../lib.js'
-import {getFurniture} from '../api/data.js';
+import {getItems} from '../api/data.js';
 import {itemTemplate} from './common/item.js';
 
 let dashboardTemplate = (data) => html`
@@ -16,7 +16,7 @@ let dashboardTemplate = (data) => html`
 
 
 
-export async function dashboardPage(context) {
-    let data = await getFurniture()
+export async function indexPage(context) {
+    let data = await getItems()
     context.render(dashboardTemplate(data))
 }

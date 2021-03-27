@@ -1,7 +1,7 @@
 import {html} from '../lib.js'
-import {deleteRecord, getItemId} from '../api/data.js';
+import {getItemId} from '../api/data.js';
 
-let detailsTemplate = (item, isOwner, onDelete) => html`
+let detailsTemplate = (item, isOwner) => html`
     <div class="row space-top">
         <div class="col-md-12">
             <h1>Furniture Details</h1>
@@ -25,7 +25,7 @@ let detailsTemplate = (item, isOwner, onDelete) => html`
             ${isOwner ? html`
                 <div>
                     <a href="/edit/${item._id}" class="btn btn-info">Edit</a>
-                    <a @click=${onDelete} href="javascript:void(0)" class="btn btn-red">Delete</a>
+                    <a href="/delete/${item._id}" class="btn btn-red">Delete</a>
                 </div>` : ''
             }
         </div>
@@ -36,16 +36,7 @@ export async function detailsPage(context) {
     let id = context.params.id;
     let userId = sessionStorage.getItem('userId');
     let item = await getItemId(id);
-    context.render(detailsTemplate(item, item._ownerId == userId, onDelete));
-
-    async function onDelete() {
-        const confirmed = confirm('Are you sure?');
-        if (confirmed) {
-            await deleteRecord(id,context);
-            context.page.redirect('/');
-            // history.go(10);
-        }
-    }
+    context.render(detailsTemplate(item, item._ownerId == userId));
 }
 
 

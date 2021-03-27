@@ -1,6 +1,4 @@
-export const settings = {
-    host: ''
-};
+export const host = 'http://localhost:3030';
 
 async function request(url, options) {
     try {
@@ -56,20 +54,22 @@ async function del(url) {
 }
 
 async function login(email, password) {
-    let result = await post(settings.host + '/users/login', {email, password});
+    let result = await post(host + '/users/login', {email, password});
     sessionStorage.setItem('email', result.email);
     sessionStorage.setItem('authToken', result.accessToken);
     sessionStorage.setItem('userId', result._id);
 }
 
 async function register(email, password) {
-    let result = await post(settings.host + '/users/register', {email, password});
+    let result = await post(host + '/users/register', {email, password});
     sessionStorage.setItem('email', result.email);
     sessionStorage.setItem('authToken', result.accessToken);
     sessionStorage.setItem('userId', result._id);
 }
 
 async function logout() {
+    //TODO - correct when account token doesn't match
+    await get(host + '/users/logout');
     sessionStorage.removeItem('email');
     sessionStorage.removeItem('authToken');
     sessionStorage.removeItem('userId');

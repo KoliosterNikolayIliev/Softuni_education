@@ -1,28 +1,31 @@
 import page from './lib.js'
 import {render} from './lib.js'
 
-
+// the holder for our future views
 let main = document.getElementsByClassName('container')[0];
 
+
 import {createPage} from './views/create.js';
-import {dashboardPage} from './views/dashboard.js';
+import {indexPage} from './views/dashboard.js';
 import {editPage} from './views/edit.js';
 import {registerPage} from './user/register.js';
 import {loginPage} from './user/login.js';
-import {ownFurniturePage} from './views/my-furniture.js';
+import {userItemsPage} from './views/my-furniture.js';
 import {detailsPage} from './views/details.js';
 import {logoutPage} from './user/logout.js';
+import {deletePage} from './views/delete.js';
 
 
 
-page('/', decorateContext, dashboardPage);
-page('/my-furniture', decorateContext, ownFurniturePage);
+page('/', decorateContext, indexPage);
+page('/my-furniture', decorateContext, userItemsPage);
 page('/details/:id', decorateContext, detailsPage);
 page('/create', decorateContext, createPage);
 page('/edit/:id', decorateContext, editPage);
 page('/register', decorateContext, registerPage);
 page('/login', decorateContext, loginPage);
 page('/logout', decorateContext, logoutPage);
+page('/delete/:id', decorateContext, deletePage);
 
 setUserNav()
 page.start();

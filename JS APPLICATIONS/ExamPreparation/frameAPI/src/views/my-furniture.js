@@ -1,6 +1,6 @@
 import {html} from '../lib.js'
 
-import {getOwnFurniture} from '../api/data.js';
+import {getUserItems} from '../api/data.js';
 import {itemTemplate} from './common/item.js';
 
 let myTemplate = (data) => html`
@@ -17,7 +17,7 @@ let myTemplate = (data) => html`
 
 
 
-export async function ownFurniturePage(context) {
-    let data = await getOwnFurniture()
+export async function userItemsPage(context) {
+    let data = await getUserItems()
     context.render(myTemplate(data))
 }
