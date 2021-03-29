@@ -2,7 +2,7 @@ import page from './lib.js'
 import {render} from './lib.js'
 
 // the holder for our future views
-let main = document.getElementsByClassName('container')[0];
+let main = document.getElementsByTagName('main')[0];
 
 
 import {createPage} from './views/create.js';
@@ -14,10 +14,12 @@ import {userItemsPage} from './views/userItemDetails.js';
 import {detailsPage} from './views/details.js';
 import {logoutPage} from './user/logout.js';
 import {deletePage} from './views/delete.js';
+import {allMemes} from './views/allmemes.js';
 
 
 
 page('/', decorateContext, indexPage);
+page('/allmemes', decorateContext, allMemes);
 page('/userItems', decorateContext, userItemsPage);
 page('/details/:id', decorateContext, detailsPage);
 page('/create', decorateContext, createPage);
@@ -38,16 +40,19 @@ function decorateContext(context, next) {
 }
 
 function setUserNav(){
-    // let userId = sessionStorage.getItem('userId')
-    // if (userId!==null){
-    //     document.getElementById('user').style.display = 'inline-block'
-    //     document.getElementById('guest').style.display = 'none'
-    // }else {
-    //     document.getElementById('user').style.display = 'none'
-    //     document.getElementById('guest').style.display = 'inline-block'
-    // }
+
+    let userId = sessionStorage.getItem('userId')
+    if (userId!==null){
+        let email = sessionStorage.getItem('email')
+        document.getElementsByClassName('user')[0].style.display = 'inline-block'
+        document.getElementsByClassName('guest')[0].style.display = 'none'
+        document.getElementById('userMail').innerHTML = `Welcome, ${email}`
+    }else {
+        document.getElementsByClassName('user')[0].style.display = 'none'
+        document.getElementsByClassName('guest')[0].style.display = 'inline-block'
+    }
 }
 
-//<script src="./src/app.js" type="module" ></script>
+
 
 
