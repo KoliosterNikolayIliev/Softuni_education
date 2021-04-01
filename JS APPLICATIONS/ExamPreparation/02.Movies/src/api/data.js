@@ -3,42 +3,42 @@ import * as api from './api.js';
 import {host} from './api.js';
 
 
-async function login(username, password) {
-    return await api.apiLogin(host + '/users/login',username,password);
+async function login(email, password) {
+    return await api.apiLogin(host + '/users/login',email,password);
 }
 
-async function register(username, password) {
-    return await api.apiRegister(host + '/users/register',username,password);
+async function register(email, password) {
+    return await api.apiRegister(host + '/users/register',email,password);
 }
 
-function logout() {
-    return api.apiLogout(host + '/users/logout');
+async function logout() {
+    return await api.apiLogout(host + '/users/logout');
 }
 
 async function getItems() {
-    return await api.get(host + '/data/cars?sortBy=_createdOn%20desc');
+    return await api.get(host + '/data/movies');
 }
 
 async function getItemId(id) {
-    return await api.get(host + '/data/cars/' + id);
+    return await api.get(host + '/data/movies/' + id);
 }
 
 async function getUserItems() {
     let userId = sessionStorage.getItem('userId');
-    return await api.get(host + `/data/cars?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`);
+    return await api.get(host + `/data/catalog?where=_ownerId%3D%22${userId}%22`);
 }
 
 async function createRecord(data) {
-    return await api.post(host + '/data/cars', data);
+    return await api.post(host + '/data/movies', data);
 }
 
 async function editRecord(id, data) {
-    return await api.put(host + '/data/cars/' + id, data);
+    return await api.put(host + '/data/movies/' + id, data);
 }
 
 async function deleteRecord(id) {
     // TODO Check if id exists!!!
-    return await api.del(host + '/data/cars/' + id);
+    return await api.del(host + '/data/movies/' + id);
 }
 
 export {

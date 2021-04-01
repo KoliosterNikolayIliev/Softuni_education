@@ -5,6 +5,6 @@ export async function deletePage(context) {
     const confirmed = confirm('Are you sure?');
     if (confirmed) {
         await deleteRecord(id, context);
-        context.page.redirect('/allItems');
+        context.page.redirect('/');
     }
 }

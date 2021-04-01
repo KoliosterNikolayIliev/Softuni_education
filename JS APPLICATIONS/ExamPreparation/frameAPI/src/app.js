@@ -14,10 +14,12 @@ import {userItemsPage} from './views/userItemDetails.js';
 import {detailsPage} from './views/details.js';
 import {logoutPage} from './user/logout.js';
 import {deletePage} from './views/delete.js';
+import {allItems} from './views/All_items.js';
 
 
 
 page('/', decorateContext, indexPage);
+page('/allItems', decorateContext, allItems);
 page('/userItems', decorateContext, userItemsPage);
 page('/details/:id', decorateContext, detailsPage);
 page('/create', decorateContext, createPage);
@@ -38,14 +40,14 @@ function decorateContext(context, next) {
 }
 
 function setUserNav(){
-    // let userId = sessionStorage.getItem('userId')
-    // if (userId!==null){
-    //     document.getElementById('user').style.display = 'inline-block'
-    //     document.getElementById('guest').style.display = 'none'
-    // }else {
-    //     document.getElementById('user').style.display = 'none'
-    //     document.getElementById('guest').style.display = 'inline-block'
-    // }
+    let userId = sessionStorage.getItem('userId')
+    if (userId!==null){
+        document.getElementById('profile').style.display = 'inline-block'
+        document.getElementById('guest').style.display = 'none'
+    }else {
+        document.getElementById('profile').style.display = 'none'
+        document.getElementById('guest').style.display = 'inline-block'
+    }
 }
 
 //<script src="./src/app.js" type="module" ></script>

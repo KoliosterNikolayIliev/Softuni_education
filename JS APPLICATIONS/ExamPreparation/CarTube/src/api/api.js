@@ -3,9 +3,9 @@ export const host = 'http://localhost:3030';
 async function request(url, options) {
     try {
         let response = await fetch(url, options);
-
         if (response.ok == false) {
             let error = await response.json();
+
             throw new Error(error.message);
         }
         try {
@@ -53,26 +53,24 @@ async function del(url) {
     return await request(url, getOptions('delete'));
 }
 
-async function apiLogin(url, email, password) {
-    let result = await post(url, {email, password});
-    sessionStorage.setItem('email', result.email);
+async function apiLogin(url, username, password) {
+    let result = await post(url, {username: username, password});
+    sessionStorage.setItem('username', result.username);
     sessionStorage.setItem('authToken', result.accessToken);
     sessionStorage.setItem('userId', result._id);
 }
 
-async function apiRegister(url,email, password) {
-    let result = await post(url, {email, password});
-    sessionStorage.setItem('email', result.email);
+async function apiRegister(url,username, password) {
+    let result = await post(url, {username, password});
+    sessionStorage.setItem('username', result.username);
     sessionStorage.setItem('authToken', result.accessToken);
     sessionStorage.setItem('userId', result._id);
 }
 
-async function apiLogout(url) {
+function apiLogout(url) {
     //TODO - correct when account token doesn't match
-    await get(url);
-    sessionStorage.removeItem('email');
-    sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('userId');
+    get(url);
+    sessionStorage.clear()
 }
 
 

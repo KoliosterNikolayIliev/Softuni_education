@@ -2,11 +2,10 @@ import page from './lib.js'
 import {render} from './lib.js'
 
 // the holder for our future views
-let main = document.getElementById('site-content');
+let main = document.getElementsByTagName('main')[0];
 
 
 import {createPage} from './views/create.js';
-import {indexPage} from './views/home.js';
 import {editPage} from './views/edit.js';
 import {registerPage} from './user/register.js';
 import {loginPage} from './user/login.js';
@@ -18,8 +17,7 @@ import {allItems} from './views/All_items.js';
 
 
 
-page('/', decorateContext, indexPage);
-page('/allItems', decorateContext, allItems);
+page('/', decorateContext, allItems);
 page('/userItems', decorateContext, userItemsPage);
 page('/details/:id', decorateContext, detailsPage);
 page('/create', decorateContext, createPage);
@@ -41,17 +39,14 @@ function decorateContext(context, next) {
 
 function setUserNav(){
     let userId = sessionStorage.getItem('userId')
+    let email = sessionStorage.getItem('email')
     if (userId!==null){
-        document.getElementById('profile').style.display = 'inline-block'
-        document.getElementById('guest').style.display = 'none'
-        let username = sessionStorage.getItem('username')
-        let user = document.getElementById('userIDcurUser')
-        user.innerHTML = `Welcome ${username}`
+        document.getElementById('userNamehome').innerHTML = `Welcome, ${email}`
+        Array.from(document.getElementsByClassName('user')).map(e=>e.style.display = 'inline-block')
+        Array.from(document.getElementsByClassName('guest')).map(e=>e.style.display = 'none')
     }else {
-
-        document.getElementById('profile').style.display = 'none'
-        document.getElementById('guest').style.display = 'inline-block'
-
+        Array.from(document.getElementsByClassName('user')).map(e=>e.style.display = 'none')
+        Array.from(document.getElementsByClassName('guest')).map(e=>e.style.display = 'inline-block')
     }
 }
 
