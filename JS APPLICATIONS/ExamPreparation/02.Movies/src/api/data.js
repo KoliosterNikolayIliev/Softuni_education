@@ -41,6 +41,21 @@ async function deleteRecord(id) {
     return await api.del(host + '/data/movies/' + id);
 }
 
+export async function getLikes(movieId) {
+    return await api.get(host + `/data/likes?where=movieId%3D%22${movieId}%22&distinct=_ownerId&count`);
+}
+export async function getUserLike(movieId) {
+    let userId = sessionStorage.getItem('userId');
+    return await api.get(host + `/data/likes?where=movieId%3D%22${movieId}%22%20and%20_ownerId%3D%22${userId}%22`);
+}
+export async function addLike(data) {
+    return await api.post(host + `/data/likes`,data);
+}
+export async function unLike(id) {
+    return await api.del(host + `/data/likes/` + id);
+}
+
+
 export {
     getItems,
     getItemId,
@@ -63,4 +78,8 @@ export {
 // window.createRecord=createRecord
 // window.editRecord=editRecord
 // window.deleteRecord=deleteRecord
+// window.getLikes=getLikes
+// window.getUserLike=getUserLike
+// window.adLike=adLike
+// window.unLike=unLike
 

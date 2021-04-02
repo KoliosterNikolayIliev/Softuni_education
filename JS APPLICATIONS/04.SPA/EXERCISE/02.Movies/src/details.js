@@ -10,7 +10,7 @@ async function getLikesByMovieId(id) {
 
 async function getOwnLikesByMovieId(id) {
     let userId = sessionStorage.getItem('userId');
-    let response = await fetch(`http://localhost:3030/data/likes?where=movieId%3D%22${id}%22%20and%20_ownerId%3D%22${userId}%22 `);
+    let response = await fetch(`http://localhost:3030/data/likes?where=movieId%3D%22${id}%22%20and%20_ownerId%3D%22${userId}%22`);
     let data = await response.json();
     return data;
 }
