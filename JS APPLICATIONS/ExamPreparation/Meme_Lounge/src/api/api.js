@@ -74,12 +74,9 @@ async function apiRegister(url,email, password, username, gender) {
 
 async function apiLogout(url) {
     //TODO - correct when account token doesn't match
-    await get(url);
-    sessionStorage.removeItem('email');
-    sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('userId');
-    sessionStorage.removeItem('gender');
-    sessionStorage.removeItem('username');
+    get(url);
+    sessionStorage.clear();
+
 }
 
 

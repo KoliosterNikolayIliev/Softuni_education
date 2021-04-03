@@ -11,8 +11,8 @@ async function register(email, password, username, gender) {
     return await api.apiRegister(host + '/users/register',email,password,username,gender);
 }
 
-async function logout() {
-    return await api.apiLogout(host + '/users/logout');
+function logout() {
+    return api.apiLogout(host + '/users/logout');
 }
 
 async function getItems() {
