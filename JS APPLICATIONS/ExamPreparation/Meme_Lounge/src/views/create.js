@@ -1,5 +1,6 @@
 import {html} from '../lib.js';
 import {createRecord} from '../api/data.js';
+import {notify} from './common/notification.js';
 
 let createTemplate = (onSubmit) => html`
     <section id="create-meme">
@@ -31,7 +32,7 @@ export async function createPage(context) {
 
         };
         if(data.title == ''|| data.description==''|| data.imageUrl==''){
-            return alert('All fields are required!')
+            return notify('All fields are required!')
         }
         await createRecord(data);
         context.page.redirect('/');

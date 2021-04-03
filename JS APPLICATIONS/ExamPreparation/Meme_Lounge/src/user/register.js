@@ -1,5 +1,6 @@
 import {html} from '../lib.js'
 import {register} from '../api/data.js';
+import {notify} from '../views/common/notification.js';
 
 
 let registerTemplate = (onSubmit) => html`
@@ -43,10 +44,10 @@ export async function registerPage(context) {
         let username = formData.get('username')
 
         if (email == '' || password == '' || repass == '' || gender == '' || username == '') {
-            return alert('All fields must be filled!');
+            return notify('All fields must be filled!');
         } else if (password !== repass) {
 
-            return alert('Passwords don\'t match!');
+            return notify('Passwords don\'t match!');
         }
 
         await register(email, password,username, gender);

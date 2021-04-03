@@ -1,5 +1,6 @@
 import {html} from '../lib.js'
 import {editRecord, getItemId} from '../api/data.js';
+import {notify} from './common/notification.js';
 
 let editTemplate = (item, onSubmit) => html`
     <section id="edit-meme">
@@ -34,7 +35,7 @@ export async function editPage(context) {
             imageUrl: formData.get('imageUrl'),
         };
         if(data.title == ''|| data.description==''|| data.imageUrl==''){
-            return alert('All fields are required!')
+            return notify('All fields are required!')
         }
         await editRecord(id, data);
         context.page.redirect('/');

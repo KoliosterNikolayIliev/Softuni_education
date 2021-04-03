@@ -1,3 +1,5 @@
+import {notify} from '../views/common/notification.js';
+
 export const host = 'http://localhost:3030';
 
 async function request(url, options) {
@@ -16,7 +18,7 @@ async function request(url, options) {
         }
 
     } catch (error) {
-        alert(error.message);
+        notify(error.message);
         throw error;
     }
 }

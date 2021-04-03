@@ -1,6 +1,7 @@
 import {html} from '../lib.js'
 
 import {login} from '../api/data.js';
+import {notify} from '../views/common/notification.js';
 
 
 let loginTemplate = (onSubmit) => html`
@@ -30,7 +31,7 @@ export async function loginPage(context) {
         let email = formData.get('email').trim();
         let password = formData.get('password').trim();
         if (email==''||password==''){
-            return alert('All fields are required!')
+            return notify('All fields are required!')
         }
         await login(email, password);
 
