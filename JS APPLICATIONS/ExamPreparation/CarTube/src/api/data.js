@@ -41,6 +41,10 @@ async function deleteRecord(id) {
     return await api.del(host + '/data/cars/' + id);
 }
 
+async function getsearchItems(query) {
+    return await api.get(host + `/data/cars?where=year%3D${query}`);
+}
+
 export {
     getItems,
     getItemId,
@@ -51,6 +55,7 @@ export {
     login,
     register,
     logout,
+    getsearchItems
 };
 
 // //for testing purposes
@@ -63,4 +68,5 @@ export {
 // window.createRecord=createRecord
 // window.editRecord=editRecord
 // window.deleteRecord=deleteRecord
+window.getsearchItems=getsearchItems
 

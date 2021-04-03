@@ -15,6 +15,7 @@ import {detailsPage} from './views/details.js';
 import {logoutPage} from './user/logout.js';
 import {deletePage} from './views/delete.js';
 import {allItems} from './views/All_items.js';
+import {searchItems} from './views/search.js';
 
 
 
@@ -28,6 +29,7 @@ page('/register', decorateContext, registerPage);
 page('/login', decorateContext, loginPage);
 page('/logout', decorateContext, logoutPage);
 page('/delete/:id', decorateContext, deletePage);
+page('/search', decorateContext, searchItems);
 
 setUserNav()
 page.start();
