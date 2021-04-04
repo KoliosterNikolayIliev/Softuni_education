@@ -68,7 +68,6 @@ async function apiRegister(url,email, password) {
 }
 
 function apiLogout(url) {
-    //TODO - correct when account token doesn't match
     get(url);
     sessionStorage.clear()
 }

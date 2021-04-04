@@ -16,11 +16,14 @@ async function logout() {
 }
 
 async function getItems() {
-    return await api.get(host + '/data/catalog');
+    return await api.get(host + '/data/wiki?sortBy=_createdOn%20desc');
+}
+async function getHomeItems() {
+    return await api.get(host + '/data/wiki?sortBy=_createdOn%20desc&distinct=category');
 }
 
 async function getItemId(id) {
-    return await api.get(host + '/data/catalog/' + id);
+    return await api.get(host + '/data/wiki/' + id);
 }
 
 async function getUserItems() {
@@ -29,16 +32,18 @@ async function getUserItems() {
 }
 
 async function createRecord(data) {
-    return await api.post(host + '/data/catalog', data);
+    return await api.post(host + '/data/wiki', data);
 }
 
 async function editRecord(id, data) {
-    return await api.put(host + '/data/catalog/' + id, data);
+    return await api.put(host + '/data/wiki/' + id, data);
 }
 
 async function deleteRecord(id) {
-    // TODO Check if id exists!!!
-    return await api.del(host + '/data/catalog/' + id);
+    return await api.del(host + '/data/wiki/' + id);
+}
+async function getsearchItems(query) {
+    return await api.get(host + `/data/wiki?where=title%20LIKE%20%22${query}%22`);
 }
 
 export {
@@ -51,6 +56,8 @@ export {
     login,
     register,
     logout,
+    getHomeItems,
+    getsearchItems,
 };
 
 // //for testing purposes
