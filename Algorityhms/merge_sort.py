@@ -2,17 +2,21 @@ from timeit import timeit
 
 
 # Python program for implementation of MergeSort
-def mergeSort(arr):
-    if len(arr) > 1:
+from numba import njit
+
+
+# @njit(fastmath=True, cache=True)
+def mergeSort(array):
+    if len(array) > 1:
 
         # Finding the mid of the array
-        mid = len(arr) // 2
+        mid = len(array) // 2
 
         # Dividing the array elements
-        L = arr[:mid]
+        L = array[:mid]
 
         # into 2 halves
-        R = arr[mid:]
+        R = array[mid:]
 
         # Sorting the first half
         mergeSort(L)
@@ -25,21 +29,21 @@ def mergeSort(arr):
         # Copy data to temp arrays L[] and R[]
         while i < len(L) and j < len(R):
             if L[i] < R[j]:
-                arr[k] = L[i]
+                array[k] = L[i]
                 i += 1
             else:
-                arr[k] = R[j]
+                array[k] = R[j]
                 j += 1
             k += 1
 
         # Checking if any element was left
         while i < len(L):
-            arr[k] = L[i]
+            array[k] = L[i]
             i += 1
             k += 1
 
         while j < len(R):
-            arr[k] = R[j]
+            array[k] = R[j]
             j += 1
             k += 1
 

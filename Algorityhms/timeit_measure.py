@@ -44,4 +44,4 @@ quickSort(arr, 0, n - 1)
 
 
 merge_sort_time()
-quick_sort_time()
+# quick_sort_time()
