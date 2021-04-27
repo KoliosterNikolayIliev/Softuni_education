@@ -1,9 +1,11 @@
-# from Crypto.Util import number
-# from sympy.ntheory import factorint
-#
-# import timeit
-# import numpy as np
-# import matplotlib.pyplot as plt
+from Crypto.Util import number
+from sympy.ntheory import factorint
+
+import timeit
+import numpy as np
+import matplotlib.pyplot as plt
+
+
 #
 # bits = list(range(10,90,10))
 #
@@ -103,5 +105,66 @@
 #
 # print([list(x) for x in x])
 
-a = (x for x in range(10))
-print([x for x in a])
+# Write your code here
+
+# import time
+# from numpy.random import rand
+#
+#
+# def exec_time(func):
+#     def wrapper(*args, **kwargs):
+#         start = time.time()
+#         func(*args, **kwargs)
+#         end = time.time()
+#         return (end - start)
+#
+#     return wrapper
+#
+#
+# @exec_time
+# def py_time(randoms):
+#     return sum(randoms)
+#
+#
+# @exec_time
+# def np_time(randoms):
+#     return np.sum(randoms)
+#
+#
+# py_times = []
+# np_times = []
+#
+#
+# n = np.array([el for el in range(0, 1000000, 50000)])
+# for j in n:
+#     randoms = rand(j)
+#     py_10_loop = []
+#     np_10_loop = []
+#     for i in range(10):
+#         py_10_loop.append(py_time(randoms))
+#         np_10_loop.append(np_time(randoms))
+#     py_times.append(np.mean(py_10_loop))
+#     np_times.append(np.mean(np_10_loop))
+#
+#
+# def plot_time_function(bits, times_create_factors, times_from_factors_to_nums):
+#     plt.plot(bits, times_create_factors, 3000, c='green')
+#     plt.plot(bits, times_from_factors_to_nums, 3000, c='red', )
+#     plt.axis([min(bits), max(bits)+10, min(times_from_factors_to_nums), max(times_create_factors)])
+#     plt.xlabel("array length")
+#     plt.ylabel("time")
+#     return plt.show()
+#
+# plot_time_function(n, py_times, np_times)
+
+
+def get_limit(f, a):
+    epsilon = np.array([10 ** p for p in np.arange(0, -11, -1, dtype=float)])
+    x = np.append(a - epsilon, (a + epsilon)[::-1])
+    y = f(x)
+    return y
+
+
+print(get_limit(lambda x: x ** 2, 3))
+print(get_limit(lambda x: x ** 2 + 3 * x, 2))
+print(get_limit(lambda x: np.sin(x), 0))
