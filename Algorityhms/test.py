@@ -5,7 +5,6 @@ import timeit
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 #
 # bits = list(range(10,90,10))
 #
@@ -158,13 +157,32 @@ import matplotlib.pyplot as plt
 # plot_time_function(n, py_times, np_times)
 
 
-def get_limit(f, a):
-    epsilon = np.array([10 ** p for p in np.arange(0, -11, -1, dtype=float)])
-    x = np.append(a - epsilon, (a + epsilon)[::-1])
-    y = f(x)
+# def get_limit(f, a):
+#     epsilon = np.array([10 ** p for p in np.arange(0, -11, -1, dtype=float)])
+#     x = np.append(a - epsilon, (a + epsilon)[::-1])
+#     y = f(x)
+#     return y
+#
+#
+# print(get_limit(lambda x: x ** 2, 3))
+# print(get_limit(lambda x: x ** 2 + 3 * x, 2))
+# print(get_limit(lambda x: np.sin(x), 0))
+
+# finding local minimum of function
+x_old = 0
+x_new = 6
+step_size = 0.01
+precision = 1E-5  # (0.00001)
+
+
+def df(x):
+    # f`(x^4 - 3x^3 +2) = 4x^3-9x^2
+    y = 4 * x ** 3 - 9 * x ** 2
     return y
 
 
-print(get_limit(lambda x: x ** 2, 3))
-print(get_limit(lambda x: x ** 2 + 3 * x, 2))
-print(get_limit(lambda x: np.sin(x), 0))
+while abs(x_new - x_old) > precision:
+    x_old = x_new
+    x_new -= step_size * df(x_old)
+
+print(f'The local minimum occurs at {x_new}')
