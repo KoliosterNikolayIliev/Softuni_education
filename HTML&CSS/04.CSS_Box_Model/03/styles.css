@@ -1,0 +1,18 @@
+html{
+    font-family: Helvetica, sans-serif;
+}
+body{
+    background: rgb(238, 238, 238);
+}
+article {
+    max-width: 35%;
+    margin: auto;
+    border: black 1px solid;
+    padding:10px 200px 10px 200px;
+
+}
+
+img {
+    display: block;
+    max-block-size: 26em;
+}

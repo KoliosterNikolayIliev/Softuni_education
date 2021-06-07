@@ -1,0 +1,30 @@
+html{
+    font-family: Helvetica, sans-serif;
+}
+body{
+    background: rgb(238, 238, 238);
+}
+article {
+    width: 40%;
+    margin: auto;
+    border: black 1px solid;
+    padding:10px 150px 10px 50px;
+
+}
+p{
+    max-width: 70%;
+
+}
+
+img {
+    display: block;
+    max-block-size: 26em;
+}
+
+aside {
+    width: 24%;
+    padding-left: 15px;
+    margin-left: 20px;
+    float: right;
+}
+

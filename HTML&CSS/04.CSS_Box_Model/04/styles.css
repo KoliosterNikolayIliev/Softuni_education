@@ -1,0 +1,25 @@
+html{
+    font-family: Helvetica, sans-serif;
+}
+nav{
+    display: inline-block;
+}
+
+ul, li, h1{display: inline-block}
+
+a{
+    text-decoration: none;
+    color: rgb(99, 173, 65);
+    margin-left: 20px;
+    font-size: small
+
+}
+h1{
+    margin-right: 44px;
+    font-size:xx-large
+}
+
+body{
+    max-width: 95%;
+    margin-left: 2.5%
+}

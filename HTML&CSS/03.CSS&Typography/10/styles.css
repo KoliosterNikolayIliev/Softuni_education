@@ -1,0 +1,55 @@
+html{
+
+    font-family:Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    width: fit-content;
+
+
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Georgia, serif;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+
+tr:nth-child(odd) td {
+    background: rgb(241, 241, 241)
+}
+th{
+    background: rgb(150, 150, 150)
+}
+
+tr:nth-child(odd){
+    background: rgb(241, 241, 241)
+}
+
+table, tr, td{
+    border-width: 1px;
+    border-color: rgb(150, 150, 150);
+    border-style: solid;
+    width:117em;
+}
+
+tr:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+blockquote{
+    border-left: solid;
+    border-color: rgb(221,221,221);
+    font-style: italic;
+}
+blockquote>p:first-child{
+    margin-left: 1em;
+}
+blockquote>p:last-child{
+    margin-left: 110em;
+}
+blockquote>p:nth-child(2){
+    margin-left: 1em;
+}
+hr{
+    color: rgb(221,221,221);
+}

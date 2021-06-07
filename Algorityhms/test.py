@@ -1,9 +1,14 @@
+import copy
+from datetime import date
+from functools import reduce
+
 from Crypto.Util import number
 from sympy.ntheory import factorint
 
-import timeit
+from time import time
 import numpy as np
 import matplotlib.pyplot as plt
+
 
 #
 # bits = list(range(10,90,10))
@@ -169,20 +174,140 @@ import matplotlib.pyplot as plt
 # print(get_limit(lambda x: np.sin(x), 0))
 
 # finding local minimum of function
-x_old = 0
-x_new = 6
-step_size = 0.01
-precision = 1E-5  # (0.00001)
+# x_old = 0
+# x_new = 6
+# step_size = 0.01
+# precision = 1E-5  # (0.00001)
+#
+#
+# def df(x):
+#     # f`(x^4 - 3x^3 +2) = 4x^3-9x^2
+#     y = 4 * x ** 3 - 9 * x ** 2
+#     return y
+#
+#
+# while abs(x_new - x_old) > precision:
+#     x_old = x_new
+#     x_new -= step_size * df(x_old)
+#
+# print(f'The local minimum occurs at {x_new}')
+
+#
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     # a class method to create a Person object by birth year.
+#     @classmethod
+#     def fromBirthYear(cls, name, year):
+#         return cls(name, date.today().year - year)
+#
+#     # a static method to check if a Person is adult or not.
+#     @staticmethod
+#     def isAdult(age):
+#         return age > 18
+#
+#
+# person1 = Person('mayank', 21)
+# person2 = Person.fromBirthYear('mayank', 1996)
+#
+# print(person1.age)
+# print(person2.age)
+#
+# # print the result
+# print(Person.isAdult(22))
+
+# def pig_it(text):
+#     words = text.split(' ')
+#     new_words = []
+#     for word in words:
+#         if word not in [chr(x) for x in range(33, 64)]:
+#             word = word[1:] + word[0] + 'ay'
+#         new_words.append(word)
+#     return ' '.join(new_words)
+#
+#
+# pig_it('kur')
+#
+#
+# def pig_it_codewars(text):
+#     lst = text.split()
+#     return ' '.join([word[1:] + word[:1] + 'ay' if word.isalpha() else word for word in lst])
 
 
-def df(x):
-    # f`(x^4 - 3x^3 +2) = 4x^3-9x^2
-    y = 4 * x ** 3 - 9 * x ** 2
-    return y
+# def determinant(matrix, total=0):
+#     indices = list(range(len(matrix)))
+#
+#     if len(matrix) == 1 and len(matrix[0]) == 1:
+#         return 1
+#
+#     if len(matrix) == 2 and len(matrix[0]) == 2:
+#         val = matrix[0][0] * matrix[1][1] - matrix[1][0] * matrix[0][1]
+#         return val
+#
+#     for fc in indices:
+#         As = copy.deepcopy(matrix)
+#         As = As[1:]
+#         height = len(As)
+#
+#         for i in range(height):
+#             As[i] = As[i][0:fc] + As[i][fc + 1:]
+#
+#         sign = (-1) ** (fc % 2)
+#         sub_det = determinant(As)
+#         total += sign * matrix[0][fc] * sub_det
+#
+#     return total
+#
+# def determinant(m):
+#     a = 0
+#     if len(m) == 1:
+#         a = m[0][0]
+#     else:
+#         for n in range(len(m)):
+#             if (n + 1) % 2 == 0:
+#                 a -= m[0][n] * determinant([o[:n] + o[n+1:] for o in m[1:]])
+#             else:
+#                 a += m[0][n] * determinant([o[:n] + o[n+1:] for o in m[1:]])
 
 
-while abs(x_new - x_old) > precision:
-    x_old = x_new
-    x_new -= step_size * df(x_old)
+# def scramble(s1, s2):
+#     for letter in s2:
+#         if s1.count(letter)< s2.count(letter):
+#             return False
+#         if letter not in s1:
+#             return False
+#     return True
 
-print(f'The local minimum occurs at {x_new}')
+# def scramble(s1, s2):
+#     d2 = {}
+#     d1 = {}
+#     for letter in s2:
+#         d1[letter] = 0
+#         if letter not in d2.keys():
+#             d2[letter] = 1
+#         else:
+#             d2[letter] += 1
+#     for letter in s1:
+#         if letter not in d1.keys():
+#             continue
+#         else:
+#             if d1[letter] == d2[letter]:
+#                 continue
+#             else:
+#                 d1[letter] += 1
+#     return d1 == d2
+
+from collections import Counter
+def scramble(s1,s2):
+    # Counter basically creates a dictionary of counts and letters
+    # Using set subtraction, we know that if anything is left over,
+    # something exists in s2 that doesn't exist in s1
+    return len(Counter(s2)- Counter(s1)) == 0
+
+print(scramble('scriptjavx', 'javascript'))
+print(scramble('cedewaraaossoqqyt', 'codewars'))
+print(scramble('katas', 'steak'))
+print(scramble('scriptjava', 'javascript'))
+print(scramble('scriptingjava', 'javascript'))
