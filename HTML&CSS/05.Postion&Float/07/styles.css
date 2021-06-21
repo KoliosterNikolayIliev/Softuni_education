@@ -1,0 +1,21 @@
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+
+a {
+    color: #262626;
+    background: #eeeeee;
+    font-size: 38px;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 24px;
+}
+
+a:hover {
+    color: #3b5a94;
+}
+
+li{
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 35px;
+    margin-top: 50px;
+}

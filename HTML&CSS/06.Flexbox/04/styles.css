@@ -1,0 +1,81 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+.container {
+    max-width: 65vw;
+    display: flex;
+    align-items: center;
+}
+
+.notes {
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.week {
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+span {
+    border: 1px solid black;
+    padding:29px 29px
+}
+
+.week {
+    flex-grow: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.notes {
+    flex-grow: 1;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    height: 50%;
+
+}
+
+.notes span {
+    align-items: baseline;
+
+}
+.work-week {
+    width: 100%;
+}
+.weekend{
+    width: 100%;
+
+}
+.container{
+    align-items: baseline;
+    height:50vh;
+
+}
+span{
+    text-align: center;
+    align-items: stretch;
+
+}
+.day-off{
+    padding: 29px 128px;
+}
+.reminders{
+    padding-bottom: 108px;
+}
+.special{
+    padding-bottom: 20px;
+}

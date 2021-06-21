@@ -1,0 +1,40 @@
+html{
+    font-family: Helvetica, serif;
+    line-height: 1.2;
+}
+body{
+    max-width: 80%;
+    margin-left: 10%;
+}
+header{
+    border-bottom: 2px solid rgb(0,0,0);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+}
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 9%;
+}
+a{
+    color: rgb(0, 153, 0);
+    text-decoration: none;
+}
+h1{
+    font-weight: normal;
+}
+
+.site-title{
+    font-weight: bold;
+    font-size: 44px;
+    text-transform: uppercase;
+    margin-bottom: 20px
+}
+li{
+    margin-left: 12%;
+}

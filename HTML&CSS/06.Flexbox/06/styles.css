@@ -1,0 +1,32 @@
+body, ul, li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+ul{
+    align-items: stretch;
+}
+body {
+    font-family: Helvetica, serif;
+    background: RGB(239, 239, 239);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+.gallery{
+    margin-left: 4%;
+    margin-top: 6%;
+    display: flex;
+}
+
+li{
+    padding: 30px 14px;
+    background: white;
+    border: 12px solid black;
+    margin-bottom: 10%;
+    box-shadow: inset 1px 1px 7px 1px;
+}
