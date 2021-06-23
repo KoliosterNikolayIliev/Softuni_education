@@ -1,0 +1,71 @@
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.form {
+display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20%;
+    width: 30%;
+    background: #f8f8f8;
+    border: 1px solid grey;
+    box-shadow: 1px 1px 6px 0px;
+    border-radius: 5px;
+
+}
+
+.username, .password{
+    display: flex;
+    margin-left: 5%;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    align-items: center;
+
+}
+#password, #username{
+    flex-basis: 75%;
+    padding: 6px 6px 6px 24px;
+    height: 25px;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+    min-width: 10px;
+}
+#password:focus,#username:focus {
+    background: red;
+}
+.login-btn {
+    width: 70px;
+    border-radius: 4px;
+    padding: 8px 0px;
+    color: white;
+    background: black;
+    border: none;
+    margin-bottom: 4%;
+    margin-left: 5%;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
+i{
+    position: relative;
+    left: 22px;
+}
+
+legend{
+    font-family: Helvetica, sans-serif;
+    border-radius: 3px;
+    border: 1px solid lightslategray;
+    padding: 8px;
+    width: 140px;
+    background: #f8f8f8;
+    position: relative;
+    bottom: 2%;
+    right: 3%;
+}
+
