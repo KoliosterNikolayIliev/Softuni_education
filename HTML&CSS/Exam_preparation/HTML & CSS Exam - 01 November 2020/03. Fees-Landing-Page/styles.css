@@ -1,0 +1,124 @@
+html{
+    box-sizing: border-box;
+    font-family: Roboto,serif;
+}
+*{
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav>span>img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+nav>span{
+    max-width: 120px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    align-items: center;
+}
+nav>ul{
+display: flex;
+    min-width: 20%;
+}
+nav>ul>li{
+    list-style: none;
+    padding: 0 5%;
+    /*min-width: 80px;*/
+}
+nav>ul>li:nth-child(1){
+    min-width: 80px;
+}
+nav>ul>li>a{color:gray;}
+
+header>section{
+    width: 100%;
+    height: 300px;
+    background:rgb(84, 84, 109) ;
+    text-align: center;
+}
+header>section::after{
+    content: url("./images/calculator-icon.svg");
+    position: relative;
+    right:50%;
+    top:-20%;
+
+}
+header>section>h2{
+    color: white;
+    font-weight: normal;
+    padding-top: 40px;
+
+}
+.cards{
+    position: relative;
+    bottom:150px;
+}
+.card-container{
+    display: flex;
+    width: 86%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    box-shadow: 1px 1px 7px 0px;
+    border-radius: 8px;
+    align-items: center;
+    background: white;
+    justify-content: space-between;
+}
+.card h3{
+
+}
+.card.special > article{
+    background: rgb(73,212,126);
+background: linear-gradient(90deg, rgba(73,212,126,1) 0%, rgba(38,184,94,1) 80%, rgba(3,155,61,1) 100%);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.card.normal>article>ul{
+    display: flex;
+    list-style: none;
+}
+.card.normal > article {
+    /*height: 200px;*/
+}
+.card.normal > article{
+    background: rgb(73,212,126);
+background: linear-gradient(90deg, rgba(73,212,126,1) 0%, rgba(38,184,94,1) 80%, rgba(3,155,61,1) 100%);
+
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin: 0;
+}
+.card.normal > article>ul>li:nth-child(1){
+    border-right: 1px solid white;
+
+}
+.card.normal>article>ul>li{
+
+}
+.card.normal>article>ul>li:nth-child(2){
+margin-left: 20px;
+}
+.card.normal>article>ul>li>p{
+    margin: 0;
+    padding: 0;
+}

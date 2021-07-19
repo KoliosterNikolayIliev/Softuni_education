@@ -1,0 +1,65 @@
+@media all and (max-width: 600px) {
+    html{
+        display: flex;
+        width: 600px;
+        box-sizing: border-box;
+
+    }
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .banner{
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .heading{
+        display: flex;
+        width: 100%;
+    }
+    .inner{
+        display: flex;
+        flex-direction: column;
+    }
+    .features{
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+    }
+    .feature{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .grid-form{
+        flex-direction: column;
+    }
+    .form-control{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .actions{
+        display: flex;
+    }
+    .major{width: 600px}
+    .grid-form .form-control.narrow{
+        width: 100%;
+    }
+    .actions li input{
+        margin-top: 150px;
+        width: 600px;
+    }
+}
+
+

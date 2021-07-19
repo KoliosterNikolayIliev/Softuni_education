@@ -1,0 +1,75 @@
+.title, #username, #password, .login {
+    font-family: Poppins, serif;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::after {
+    background: #989EA4;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ededed;
+    padding: 20px 0px;
+    border-radius: 8px;
+}
+
+.input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    background: #ededed;
+    outline: none;
+    text-align: center;
+}
+
+.login {
+    margin-top: 10px;
+    padding: 8px 50px;
+    border: none;
+    border-radius: 30px;
+    background: #bd1566;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.title {
+    color: white;
+    font-size: 29px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+i{
+    position: relative;
+    top:34px;
+    left: 59px;
+
+    color: gray;
+}

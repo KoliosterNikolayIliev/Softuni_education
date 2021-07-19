@@ -1,0 +1,268 @@
+html {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+
+}
+
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+i {
+    font-family: unset;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat, sans-serif;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 255.8)), url('./images/hero-certificates.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+}
+
+header {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0px 25px 0px 25px;
+    box-shadow: 0.5px 0.5px 10px 2px lightslategray;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.header-logo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.header-ul {
+    display: flex;
+    list-style: none;
+    padding-top: 10px;
+    margin-bottom: 25px;
+}
+
+.header-ul li a {
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 22px;
+    color: #a5acb3;
+    text-decoration: none;
+}
+
+.header-ul li a:hover {
+    border-top: 4px solid #4bb5f5;
+
+}
+
+#circle {
+    background: #4bb5f5;
+    border-radius: 50%;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    color: white;
+
+}
+
+#circle {
+    color: white;
+}
+
+#circle:hover {
+    border-top: none;
+}
+
+.certificates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.cert-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.certificate-description {
+    width: 50%;
+    font-size: 12px;
+    background: #2c3c4b;
+    color: white;
+    padding: 0px 10px 0px 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 9px 8px lightgray;
+}
+
+.certificate-images {
+    width: 30%;
+}
+
+#cert-image-black {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+#cert-image-blue {
+    width: 45%;
+    height: auto;
+    object-fit: cover;
+    margin-right: -5px;
+}
+
+.small-letters {
+    width: 72%;
+}
+
+.small-letters p {
+    font-size: 11px;
+    font-style: italic;
+    margin: 25px 0px 40px 0px
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.diploma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 75%;
+    font-size: 15px;
+    background: lightgray;
+    padding: 0px 20px 10px 20px;
+
+}
+.paragraph{display: flex;
+    width: 75%;
+justify-content: start}
+.middle-title {
+    color: #989EA4;
+    font-weight: normal;
+}
+
+.small-letters-2 {
+    font-size: 12px;
+}
+
+.last {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.engineer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 76%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('./images/sign-up-prompt-background.jpg');
+    background-size: cover;
+    border-radius: 6px;
+
+}
+
+.engineer h3, h6 {
+    font-weight: normal;
+    max-width: 60%;
+    text-align: center;
+    line-height: 1.5;
+    margin: 10px 0px 0px 0px;
+    color: white;
+}
+
+.engineer ul {
+    display: flex;
+    list-style: none;
+}
+
+.engineer li:nth-child(1) {
+    border-right: 1px solid white;
+
+}
+
+.engineer ul li button {
+    margin: 0px 20px 0px 20px;
+    padding: 5px 25px 5px 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+}
+
+.engineer ul li:nth-child(1) button {
+    color: #4bb5f5;
+    background: white;
+}
+
+i {
+    font-family: unset;
+}
+
+#footer-logo {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.logo-footer li:nth-child(1) {
+    width: 80px;
+}
+.logo-footer li:nth-child(2) {
+    font-size: 8px;
+    color: #989EA4;
+}
+
+footer ul li {
+    font-size: 10px;
+    padding: 0px 5px;
+}
+
+footer {
+
+    display: flex;
+    justify-content: space-between;
+    width: 76%;
+    margin: 50px auto 10px  auto;
+    border-top: 1px solid gray;
+}
+
+footer ul {
+display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}

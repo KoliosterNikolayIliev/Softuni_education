@@ -1,0 +1,201 @@
+html {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: rgb(71, 194, 177);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px 0 100px;
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+}
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+.menu li a{
+    color: white;
+    padding: 10px 10px 10px 10px;
+    font-size: 12px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+header > article {
+    display: flex;
+    background: rgb(255, 184, 3);
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    color: white;
+}
+header > article>p{
+   text-align: center;
+    max-width: 45%;
+    margin: 0 0 40px 20px
+}
+header > article>h1{
+    font-size: 28px;
+}
+
+.teacher-description-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}
+.image-container{
+    width: 100%;
+    height: 100%;
+    padding-right: 20px;
+}
+.image-container img{
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    border: 4px solid rgb(71, 194, 177);
+    border-radius: 50%;
+
+}
+.teacher{
+    display: flex;
+    max-width: 40%;
+}
+.content h3{
+    color: rgb(71, 194, 177);
+    font-size: 15px;
+    margin: 0 0 5px 0;
+}
+.content p:nth-child(2){
+    color: rgb(203, 197, 198);
+    font-size: 10px;
+    margin-top: 0;
+}
+.content p:nth-child(3){
+    color: rgb(174, 163, 162);
+    font-size: 12px;
+    line-height: 1.2;
+}
+.other-teachers{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.other-teachers article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.other-teachers .image-container{
+    margin: 0;
+    padding: 0;
+}
+
+.other-teachers h4{
+    margin: 10px 0 0 0;
+    color: #00b4b5;
+}
+.other-teachers p{
+    color: rgb(203, 197, 198);
+    margin-top: 5px;
+    font-size: 10px;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    width: 100%;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    background: rgb(108, 189, 248);
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 50px;
+    color: white;
+    border-top: 8px solid rgb(151, 208, 251);
+}
+.form p{
+    font-size: 12px;
+    max-width: 50%;
+    text-align: center;
+}
+form{
+    margin-top: 20px;
+}
+form input{
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 10px;
+    padding: 10px 20px 10px 5px;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-radius: 5px;
+}
+form input:nth-child(4){
+   padding-left: 20px;
+    border-radius: 20px;
+    border: none;
+    background: rgb(255, 150, 0);
+    box-shadow: 1px 1px 9px 0px grey;
+}
+
+.contacts{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    color: white;
+    background: rgb(92, 92, 92);
+    border-top: 8px solid rgb(150, 150, 150);
+    font-size: 13px;
+}
+.contacts ul{
+    padding: 0;
+}
+.contacts li{
+    list-style: none;
+    padding: 0;
+    line-height: 1.2;
+    font-size: 12px;
+}
+.social li{
+    font-size: 22px;
+    display: inline;
+    padding-right: 5px;
+}
+.last{
+    margin-right: 140px;
+
+}
+
