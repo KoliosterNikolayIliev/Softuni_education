@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-try';
+  kur = 'Bachka kure';
+  counter = 0;
+
+  increaser():void{
+    this.counter++
+  }
 }
