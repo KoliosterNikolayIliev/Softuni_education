@@ -25,18 +25,23 @@
                 {% csrf_token %}
                 <label>Title</label>
                 {{ form.title }}
+                {{ form.title.errors }}
 
                 <label>Image URL</label>
                 {{ form.image_url }}
+                {{ form.image_url.errors }}
 
                 <label>Description</label>
                 {{ form.description }}
+                {{ form.description.errors }}
 
                 <label>Ingredients</label>
                 {{ form.ingredients }}
+                {{ form.ingredients.errors }}
 
                 <label>Time (Minutes)</label>
                 {{ form.time }}
+                {{ form.time.errors }}
                 <input type="submit" value="Create">
             </form>
         </div>

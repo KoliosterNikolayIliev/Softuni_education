@@ -28,8 +28,8 @@
             </div>
             <h3>Ingredients</h3>
             <ul>
-                {% if ingredients %}
-                    {% for ingredient in ingredients %}
+                {% if object.ingredients %}
+                    {% for ingredient in object.ingredients %}
                         <li>{{ ingredient }}</li>
                     {% endfor %}
                 {% else %}

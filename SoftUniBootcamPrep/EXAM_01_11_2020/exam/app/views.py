@@ -14,18 +14,17 @@ class DetailsView(DetailView):
     template_name = 'details.html'
     model = Recipe
 
-  #TODO - fix ingredients
-# def details(request, pk):
-#     recipe = Recipe.objects.get(pk=pk)
-#     ingredients = list(recipe.ingredients.split(', '))
-#     context = {'recipe': recipe, 'ingredients':ingredients}
-#     return render(request, 'details.html', context)
+    def get_context_data(self, **kwargs):
+        context = super(DetailsView, self).get_context_data(**kwargs)
+        ingredients = context.get('object').ingredients.split(', ')
+        context['object'].ingredients = ingredients
+        return context
 
 
 class CreateRecipeView(CreateView):
     model = Recipe
     template_name = 'create.html'
-    fields = ['title', 'image_url', 'description', 'ingredients', 'time']
+    fields = '__all__'
     success_url = '/'
 
 
@@ -40,4 +39,5 @@ class DeleteRecipeView(DeleteView, ModelFormMixin):
     model = Recipe
     template_name = 'delete.html'
     success_url = '/'
-    form_class = DeleteRecipeForm
+    fields = '__all__'
+    # form_class = DeleteRecipeForm

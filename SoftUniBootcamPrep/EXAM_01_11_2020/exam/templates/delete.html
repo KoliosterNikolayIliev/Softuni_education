@@ -20,16 +20,19 @@
     <h1>Delete Recipe</h1>
     <div class="items-container">
         <div class="item">
+
             <form method="POST" action="{% url 'delete' object.id %}">
+
                 {% csrf_token %}
-                <label>Title</label>
-                {{ form.title }}
+                <label for="title">Title</label>
+                <input id="title" type="text" value="{{ form.title.value }}" disabled/>
+
 
                 <label>Image URL</label>
                 {{ form.image_url }}
 
-                <label>Description</label>
-                {{ form.description }}
+                <label for="id_description">Description</label>
+                <textarea name="description" cols="40" rows="10" required="" id="id_description" disabled>{{ form.description.value }}</textarea>
 
                 <label>Ingredients</label>
                 {{ form.ingredients }}
